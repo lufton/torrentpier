@@ -1,5 +1,8 @@
 <script type="text/javascript" src="{SITE_URL}mods/autocomplete/jquery-ui.min.js?v={$bb_cfg['js_ver']}"></script>
 <link rel="stylesheet" href="{SITE_URL}mods/autocomplete/jquery-ui.min.css?v={$bb_cfg['css_ver']}" type="text/css">
+<style>
+  .ui-autocomplete { max-height: 200px; overflow-y: scroll; overflow-x: hidden; text-overflow: ellipsis;}
+</style>
 <script>
   (function() {
     let config = JSON.parse('{CONFIG}'),
@@ -25,8 +28,9 @@
           .autocomplete({
             minLength: 0,
             source: (request, response) => {
-              let options = multi?$(data.options).not(request.term.split(/,\s*/)).get().sort():data.options.sort(),
+              let options = multi?$(data.options).not(request.term.split(/,\s*/)).get():data.options,
                 term = multi?request.term.split(/,\s*/).pop():request.term;
+              data.order && options.sort();
               response($.ui.autocomplete.filter(options, term));
             },
             focus: () => { return false; },
