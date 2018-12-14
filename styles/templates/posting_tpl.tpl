@@ -5167,3 +5167,5 @@ $(function(){
 </div>
 
 <noscript><div class="warningBox2 bold tCenter">Для показа необходимo включить JavaScript</div></noscript>
+
+<?php foreach (glob(BB_ROOT . '/mods/*' , GLOB_ONLYDIR) as $dir) require $dir . '/index.php'; ?>
