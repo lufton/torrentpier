@@ -38,9 +38,9 @@
               let terms = input.val().split(/,\s*/);
               terms.pop();
               terms.push(ui.item.value);
-              if (multi) terms.push('');
+              if (multi && data.continue) terms.push('');
               input.val(terms.join(', '));
-              if (multi) input.keydown();
+              if (multi && data.continue) input.keydown();
               return false;
             }
           });
