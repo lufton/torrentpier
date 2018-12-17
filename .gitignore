@@ -1,4 +1,7 @@
 .env
+.ftpquota
+sitemap/sitemap.xml
+sitemap/sitemap_dynamic.xml
 
 ### TorrentPier ###
 .idea
