@@ -69,19 +69,19 @@ $bb_cfg['cache'] = [
     ],
     // Available cache types: memcache, sqlite, redis, (filecache by default)
     'engines' => [
-        'bb_cache' => ['filecache', []],
-        'bb_config' => ['filecache', []],
-        'tr_cache' => ['filecache', []],
-        'session_cache' => ['filecache', []],
-        'bb_cap_sid' => ['filecache', []],
-        'bb_login_err' => ['filecache', []],
-        'bb_poll_data' => ['filecache', []],
+        'bb_cache' => ['memcache', []],
+        'bb_config' => ['memcache', []],
+        'tr_cache' => ['memcache', []],
+        'session_cache' => ['memcache', []],
+        'bb_cap_sid' => ['memcache', []],
+        'bb_login_err' => ['memcache', []],
+        'bb_poll_data' => ['memcache', []],
     ],
 ];
 
 // Datastore
 // Available datastore types: memcache, sqlite, redis (filecache by default)
-$bb_cfg['datastore_type'] = 'filecache';
+$bb_cfg['datastore_type'] = 'memcache';
 
 // Server
 $bb_cfg['server_name'] = $domain_name; // The domain name from which this board runs
